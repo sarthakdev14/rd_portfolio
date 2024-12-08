@@ -1,0 +1,60 @@
+import React from 'react';
+
+// Example of URLs instead of local imports
+const Skills = () => {
+  const skillsets = [
+    {
+      title: "Frontend Development",
+      icon: "🖥️", // Placeholder for the icon
+      skills: [
+        { name: "React", logo: "https://reactjs.org/logo-og.png" }, // React logo from official React website
+        { name: "TypeScript", logo: "https://www.typescriptlang.org/assets/images/icons/ts-hero-logo.svg" }, // TypeScript logo
+        { name: "Tailwind CSS", logo: "https://tailwindcss.com/_next/static/media/tailwind-logo-light.3b5e5b5b.svg" }, // Tailwind CSS logo
+        { name: "Next.js", logo: "https://nextjs.org/static/favicon/favicon-32x32.png" }, // Next.js logo
+        { name: "Redux", logo: "https://redux.js.org/img/redux-logo-landscape.png" } // Redux logo
+      ]
+    },
+    {
+      title: "Backend Development",
+      icon: "💻", // Placeholder for the icon
+      skills: [
+        { name: "Node.js", logo: "https://nodejs.org/static/images/logos/nodejs-new-pantone-black.svg" }, // Node.js logo
+        { name: "Python", logo: "https://www.python.org/community/logos/python-logo.png" }, // Python logo
+        { name: "PostgreSQL", logo: "https://www.postgresql.org/media/img/about/press/elephant.png" }, // PostgreSQL logo
+        { name: "MongoDB", logo: "https://www.mongodb.com/assets/images/global/favicon.ico" }, // MongoDB logo
+        { name: "REST APIs", logo: "https://upload.wikimedia.org/wikipedia/commons/8/84/RESTful_Web_Services_Logo.svg" } // REST API logo
+      ]
+    },
+    {
+      title: "Machine Learning",
+      icon: "🤖", // Placeholder for the icon
+      skills: [
+        { name: "TensorFlow", logo: "https://upload.wikimedia.org/wikipedia/commons/2/2d/TensorFlow_logo.svg" }, // TensorFlow logo
+        { name: "PyTorch", logo: "https://upload.wikimedia.org/wikipedia/commons/8/8e/PyTorch_logo.png" }, // PyTorch logo
+        { name: "Scikit-learn", logo: "https://scikit-learn.org/stable/_static/scikit-learn-logo-small.png" }, // Scikit-learn logo
+        { name: "Computer Vision", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/OpenCV_Logo_2016.svg/1024px-OpenCV_Logo_2016.svg.png" }, // OpenCV logo
+        { name: "NLP", logo: "https://upload.wikimedia.org/wikipedia/commons/3/3b/Spacy_logo.svg" } // spaCy (NLP) logo
+      ]
+    }
+  ];
+
+  return (
+    <div>
+      {skillsets.map((skillset, index) => (
+        <div key={index} className="skillset">
+          <h3>{skillset.icon} {skillset.title}</h3>
+          <div className="skill-icons">
+            {skillset.skills.map((skill, i) => (
+              <button key={i} className="skill-button">
+                <img src={skill.logo} alt={skill.name} className="skill-icon" />
+                <span>{skill.name}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default Skills;

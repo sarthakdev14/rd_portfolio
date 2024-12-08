@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --transition-duration: 0.5s;
+}
+
+body {
+  transition: background-color var(--transition-duration), color var(--transition-duration);
+}
+
+.theme-transition {
+  transition: all var(--transition-duration) ease-in-out;
+}
